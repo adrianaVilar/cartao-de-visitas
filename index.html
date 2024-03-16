@@ -1,258 +1,182 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
     <title>Cartão de visitas</title>
 </head>
 <body>
+<div class="container col-md-auto row">
+<!-- Início formulário principal -->
 
-  <!-- Início texto principal -->
-  <div class="form">
-    <form method="post">
+<div class="mt-3 col-md-6 row">
+  <div class="form-card">
+    <h3 class="mb-4 center-text">Preencha seus dados:</h3>
+    <div class="row">
+      <div class="col-md-6">
         <fieldset>
-          <legend> Preencha os dados: </legend>
-
-          <label for="form-name">Nome:*</label>
-          <input type="text" id="form-name" required><br>
-          Deseja personalizar?
-          <input type="checkbox" name="name-style" id="style-bold-name" value="bold"> Negrito
-          <input type="checkbox" name="name-style" id="style-italic-name" value="italic"> Itálico
-          <br>
-
-          <label for="form-role">Profissão:*</label>
-          <input type="text" id="form-role" required><br>
-          Deseja personalizar?
-          <input type="checkbox" name="role-style" id="style-bold-role" value="bold"> Negrito
-          <input type="checkbox" name="role-style" id="style-italic-role" value="italic"> Itálico
-          <br>
-
+          <div class="mb-3">
+            <div class="form-label">Nome:*
+            <input type="text" id="form-name" class="form-control" aria-describedby="nameHelp" maxlength="16" required>
+            <span id="nameHelp" class="form-text">Digite até 16 caracteres.</span>
+            </div>
+            <button class="btn btn-primary" type="button" id="save-name">Salvar</button>
+            <button class="btn btn-secondary" type="button" id="edit-name">Editar</button>
+          </div>
+          <div class="mb-2 estilo">
+            <div class="form-label">Personalizar estilo:<br>
+              <input type="checkbox" name="name-style" id="style-bold-name" value="bold">
+              <label for="style-bold-name">Negrito</label>
+              <input type="checkbox" name="name-style" id="style-italic-name" value="italic">
+              <label for="style-italic-name">Itálico</label>
+            </div>
+          </div>
+          <div class="mb-2 estilo">
+            <div class="form-label">Personalizar fonte:<br>
+              <input type="radio" name="font-name" id="arial-name" value="Arial" checked>
+              <label for="arial-name">Arial</label>
+              <input type="radio" name="font-name" id="georgia-name" value="Georgia">
+              <label for="georgia-name">Georgia</label>
+              <input type="radio" name="font-name" id="cursiva-name" value="Cursiva">
+              <label for="cursiva-name">Cursiva</label>
+            </div>
+          </div> 
         </fieldset>
-      </form>
+      </div>
+      <div class="col-md-6">
+        <fieldset>
+          <div class="mb-3">
+            <div class="form-label">Profissão:*
+            <input type="text" id="form-role" class="form-control" aria-describedby="roleHelp" maxlength="20" required>
+            <span id="roleHelp" class="form-text">Digite até 20 caracteres.</span>
+            </div>
+            <button class="btn btn-primary" type="button" id="save-role">Salvar</button>
+            <button class="btn btn-secondary" type="button" id="edit-role">Editar</button>
+          </div>
+          <div class="mb-2 estilo">
+            <div class="form-label">Personalizar estilo:<br>
+              <input type="checkbox" name="role-style" id="style-bold-role" value="bold">
+              <label for="style-bold-role">Negrito</label>
+              <input type="checkbox" name="role-style" id="style-italic-role" value="italic">
+              <label for="style-italic-role">Itálico</label>
+            </div>
+          </div>
+          <div class="mb-2 estilo">
+            <div class="form-label">Personalizar fonte:<br>
+              <input type="radio" name="font-role" id="arial-role" value="Arial" checked>
+              <label for="arial-role">Arial</label>
+              <input type="radio" name="font-role" id="georgia-role" value="Georgia">
+              <label for="georgia-role">Georgia</label>
+              <input type="radio" name="font-role" id="cursiva-role" value="Cursiva">
+              <label for="cursiva-role">Cursiva</label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
     </div>
+  </div>
+</div>
+<!-- Fim formulário principal -->
 
-  <!-- Fim texto principal -->
+<!-- Início contatos  -->
+<div class="mt-3 col-md-6 row">
+  <div class="form-card">
+    <h3 class="mb-4 center-text">Preencha com os contatos que desejar:</h3>
+    <div class="row">
+      <div class="col-md-6">
+        <fieldset>
+          <div class="mb-3">
+            <label for="form-email" class="form-label">E-mail:</label>
+            <input type="email" id="form-email" class="form-control" aria-describedby="emailHelp" maxlength="30">
+            <span id="emailHelp" class="form-text">Digite até 30 caracteres.</span><br>
+            <button class="btn btn-primary" type="button" id="save-email">Salvar</button>
+            <button class="btn btn-secondary" type="button" id="edit-email">Editar</button>
+          </div>
 
-  <!-- Início contatos  -->
+          <div class="mb-3">
+            <label for="form-phone" class="form-label">Telefone:</label>
+            <input type="tel" id="form-phone" class="form-control" placeholder="DDD-00000-0000" aria-describedby="phoneHelp" maxlength="30">
+            <span id="phoneHelp" class="form-text">Digite até 30 caracteres.</span><br>
+            <div id="phone-alert"></div>
+            <button class="btn btn-primary" type="button" id="save-phone">Salvar</button>
+            <button class="btn btn-secondary" type="button" id="edit-phone">Editar</button>
+          </div>
+        </fieldset>
+      </div>
+      
+      <div class="col-md-6">
+        <fieldset>
+          <div class="md-3">
+            <label for="form-instagram" class="form-label">Instagram:</label>
+            <div class="input-group">
+              <span class="input-group-text" id="basic-addon1">@</span>
+              <input type="text" id="form-instagram" class="form-control" aria-describedby="basic-addon1" maxlength="28">
+            </div>
+            <span class="form-text">Digite até 28 caracteres.</span><br>
+            <button class="btn btn-primary mb-3" type="button" id="save-instagram">Salvar</button>
+            <button class="btn btn-secondary mb-3" type="button" id="edit-instagram">Editar</button>
+          </div>
 
-    <fieldset>
-      <legend> Preencha com os contatos que desejar: </legend>
-
-      <label for="form-email">E-mail:</label>
-      <input type="email" id="form-email"><br>
-
-      <label for="form-phone">Telefone:</label>
-      <input type="tel" id="form-phone" placeholder="00-00000-0000" pattern="[0-9]{2}-[0-9]{5}-[0-9]{4}"><br>
-      É whatsapp?
-      <input type="radio" name="select" id="yes-wpp" value="1"> Sim
-      <input type="radio" name="select" id="no-wpp" value="2"> Não<br>
-
-      <label for="form-instagram">Instagram:</label>
-      <input type="text" id="form-instagram"><br>
-
-      <label for="form-facebook">Facebook:</label>
-      <input type="text" id="form-facebook"><br>  
-    
-    </fieldset>
+          <div class="md-3">
+            <label for="form-facebook" class="form-label">Facebook:</label>
+            <div>
+              <input type="text" id="form-facebook" class="form-control" aria-describedby="faceHelp" maxlength="30">
+              <span id="faceHelp" class="form-text">Digite até 30 caracteres.</span><br>
+            </div>
+            <button class="btn btn-primary" type="button" id="save-facebook">Salvar</button>
+            <button class="btn btn-secondary" type="button" id="edit-facebook">Editar</button>
+          </div>
+        </fieldset>
+      </div>
+    </div>
+  </div>
+</div>
 
   <!-- Fim contatos -->
+</div>
+<div class="container col-md-auto row">
 
   <!-- Início seleção de cor -->
-    <fieldset>
-      <legend> Selecione a cor do fundo: </legend>
-      <input type="radio" name="color" id="branco" value="white"> Branco
-      <input type="radio" name="color" id="verde" value="green"> Verde
-      <input type="radio" name="color" id="violeta" value="violet"> Violeta
-      <input type="radio" name="color" id="preto" value="black"> Preto
-    </fieldset>
+  <div class="mt-3 col-md-6 row">
+    <div class="form-card">
+      <h3 class="mb-4 center-text">Selecione a cor de fundo:</h3>
+      <div class="row">
+        <div class="col-md-12 estilo">
+          <fieldset>
+            <input type="radio" name="color" class="form-check-input mb-2" value="white" checked> Branco
+            <input type="radio" name="color" class="form-check-input mb-2" value="green"> Verde
+            <input type="radio" name="color" class="form-check-input mb-2" value="violet"> Violeta
+            <input type="radio" name="color" class="form-check-input mb-2" value="black"> Preto
+          </fieldset>
+        </div>
+      </div>
+      <h3 class="mb-4 mt-5 center-text">Selecione as bordas:</h3>
+      <div class="row">
+        <div class="col-md-12 estilo">
+          <fieldset>
+            <input type="checkbox" name="border" class="form-check-input mb-2" value="line"> Linha
+            <input type="checkbox" name="border" class="form-check-input mb-2" value="frame"> Quadro
+          </fieldset>
+        </div>
+      </div>
+    </div>
+  </div>
   <!-- Fim seleção de cor -->
 
-  <!-- Início seleção de fonte -->
-    <fieldset>
-      <legend> Selecione a fonte do nome: </legend>
-
-      <input type="radio" name="font-roboto" value="4"> Roboto
-      <input type="radio" name="font-nanum" value="5"> Nanum Gothic Coding
-      <input type="radio" name="font-cursiva" value="6"> Cursiva
-    </fieldset>
-
-    <fieldset>
-      <legend> Selecione a fonte da profissão: </legend>
-
-      <input type="radio" name="font-roboto" value="1"> Roboto
-      <input type="radio" name="font-nanum" value="2"> Nanum Gothic Coding
-      <input type="radio" name="font-cursiva" value="3"> Cursiva
-    </fieldset>
-  <!-- Fim seleção de fonte -->
-
-  <hr>
-
   <!-- Início cartão -->
-  <div class="card" id="card-id">
-
-  <canvas width="450px" height="250px" id="cartao-visitas" style="border:1px solid #000000;"></canvas>
-<a href="#" id="salvar">
-  Salvar
-</a>
+<div class="mt-4 col-md-6">
+  <canvas width="450" height="250" id="cartao-visitas" style="border:1px solid;"></canvas>
+  <a href="#" id="salvar" class="btn btn-primary"> Salvar </a>
+</div>
+  <!-- Fim cartão -->
 
   </div>
 
-  <!-- Fim cartão -->
+    <script src="js/canvas.js"></script>
+    <script src="js/instrucoes.js"></script>
+    <script src="js/main.js"></script>
 
-    <script>
-      var canvasOut = document.querySelector("#cartao-visitas"); 
-      var ctx = canvasOut.getContext("2d");
-      var corFundo = "white";
-      var nome = "Nome";
-      var estilosDeFonteDoNome = document.querySelectorAll("input[name=name-style]");
-      var profissao = "Profissão";
-      var estilosDeFonteDaProfissao = document.querySelectorAll("input[name=role-style]");
-      var email = " ";
-      var telefone = " ";
-      var instagram = " ";
-      var facebook = " ";
-      var seletoresDeCor = document.querySelectorAll("input[name=color]");
-
-
-      // obtém o source da imagem
-      var imgData = canvasOut.toDataURL(); // por padrão, a imagem é PNG
-
-      // Recupera a cor de fundo e desenha
-      seletoresDeCor.forEach(seletor => {
-        seletor.addEventListener("click", (e) => {
-          corFundo = e.target.value;
-          desenharCartao();
-        });
-      });
-
-      // Digita o nome
-      document.querySelector("#form-name").addEventListener("change", (e) => {
-        nome = e.target.value || "Nome";
-        desenharCartao();
-      });
-
-      // Digita a profissao
-      document.querySelector("#form-role").addEventListener("change", (e) => {
-        profissao = e.target.value || "Profissão";
-        desenharCartao();
-      });
-
-      // Digita o email
-      document.querySelector("#form-email").addEventListener("change", (e) => {
-        email = e.target.value;
-        desenharCartao();
-      });
-
-      // Digita o telefone
-      document.querySelector("#form-phone").addEventListener("change", (e) => {
-        telefone = e.target.value;
-        desenharCartao();
-      });
-
-      // Digita o instagram
-      document.querySelector("#form-instagram").addEventListener("change", (e) => {
-        instagram = e.target.value;
-        desenharCartao();
-      });
-
-      // Digita o facebook
-      document.querySelector("#form-facebook").addEventListener("change", (e) => {
-        facebook = e.target.value;
-        desenharCartao();
-      });
-
-      // Faz download do cartão
-      document.getElementById("salvar").addEventListener("click", function(e) {
-		    this.href = imgData; // source
-		    this.download = "cartao-de-visitas.png"; // nome da imagem
-		    return false;
-		  });
-
-    estilosDeFonteDoNome.forEach(estiloNome => {
-      estiloNome.addEventListener("change", desenharCartao);
-    });
-
-    estilosDeFonteDaProfissao.forEach(estiloProfissao => {
-      estiloProfissao.addEventListener("change", desenharCartao);
-    });
-  
-    // Funções canvas
-    function desenharLinha(ctx, x1, y1, x2, y2) {
-      ctx.moveTo(x1, y1);
-      ctx.lineTo(x2, y2);
-      ctx.fillStyle = "gray";
-      ctx.stroke();
-    }
-
-    function trocarFundo(ctx, cor) {
-      // Cria o gradiente
-      var grd = ctx.createRadialGradient(175, 225, 10, 350, 100, 450);
-      grd.addColorStop(0, "white");
-      grd.addColorStop(1, cor);
-
-      // Preenche o gradiente
-      ctx.fillStyle = grd;
-      ctx.fillRect(0, 0, 450, 250);
-    }
-
-    // Insere texto no canvas
-    function inserirTexto(ctx, texto, fonte, estilo, tamanho, x, y, cor, alinhamento) {
-      ctx.font = estilo + " " + tamanho + " Arial";
-      ctx.fillStyle = cor || "white";
-      ctx.textAlign = alinhamento;
-      ctx.fillText(texto, x, y);
-    }
-
-    // Insere ícone
-    function inserirImagem(icon, x, y) {
-      var img = new Image();
-      img.src = "img/" + icon + ".png";
-
-      img.onload = function () {
-        ctx.drawImage(img, x, y, 22, 20);
-      }
-    }
-
-    function resetarCanvas(canvas) {
-      let ctx = canvas.getContext("2d");
-      //ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.reset();
-    }
-
-    function desenharCartao() {
-      resetarCanvas(canvasOut);
-      trocarFundo(ctx, corFundo);
-      desenharLinha(ctx, 150, 10, 150, 240);
-
-      var estiloDoNome = "";
-      var estiloDaProfissao = "";
-
-      estilosDeFonteDoNome.forEach(estiloNome => {
-        if (estiloNome.checked) {
-          estiloDoNome += " " + estiloNome.value;
-        }
-      });
-
-      estilosDeFonteDaProfissao.forEach(estiloProfissao => {
-        if (estiloProfissao.checked) {
-          estiloDaProfissao += " " + estiloProfissao.value;
-        }
-      });
-      
-      inserirTexto(ctx, nome, null, estiloDoNome, "25px", 75, 120, "black", "center");
-      inserirTexto(ctx, profissao, null, estiloDaProfissao, "15px", 75, 140, "black", "center");
-      inserirTexto(ctx, email, null, "normal", "20px", 225, 50, "black", "start");
-
-      if(email != " ") {
-        window.onload = inserirImagem("email", 190, 36);
-      }
-
-      inserirTexto(ctx, telefone, null, "normal", "20px", 225, 100, "black", "start");
-      inserirTexto(ctx, instagram, null, "normal", "20px", 225, 150, "black", "start");
-      inserirTexto(ctx, facebook, null, "normal", "20px", 225, 200, "black", "start");
-
-    }
-
-    </script>
 </body>
 </html>

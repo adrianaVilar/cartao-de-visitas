@@ -1,3 +1,44 @@
-canvas {
-    background-color: red;
+@font-face {
+    font-family: 'Cursiva';
+    src: url('../font/DancingScript-Regular.ttf') format('truetype');            
+}
+
+body {
+    background-color: #f8f9fa;
+}
+
+label {
+    font-size: 0.9rem;
+}
+
+.estilo {
+    font-size: 0.8rem;
+}
+    
+.container {
+    display: flex;
+    align-content: stretch;
+    justify-content: space-evenly;
+    align-items: stretch;
+    max-width: 1200px;
+}
+    
+.form-card {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+    
+.center-text {
+    text-align: center;
+}
+
+/* telas menores */
+@media (max-width: 350px) {
+  #cartao-visitas {
+    width: 300px;
+    height: 167px;
+    align-items: center;
+  }
 }
